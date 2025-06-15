@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Livros Emprestados</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="container mt-5">
+  <h2 class="mb-4">
+    <i class="fas fa-book"></i> Livros Emprestados
+  </h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Aluno (Matrícula)</th>
+        <th>Livro</th>
+        <th>Data Empréstimo</th>
+        <th>Data Devolução</th>
+      </tr>
+    </thead>
+    <tbody id="tabela-emprestados">
+      <!-- Será preenchido via JavaScript -->
+    </tbody>
+  </table>
+  <a href="/" class="btn btn-secondary">
+    <i class="fas fa-arrow-left"></i> Voltar
+  </a>
+
+  <script>
+    // Exemplo simples de dados (substituir pelo backend)
+    const emprestados = [
+      { matricula: "123", titulo: "Livro A", dataEmprestimo: "01/06/2025", dataDevolucao: "08/06/2025" },
+      { matricula: "456", titulo: "Livro B", dataEmprestimo: "05/06/2025", dataDevolucao: "12/06/2025" }
+    ];
+
+    const tbody = document.getElementById("tabela-emprestados");
+    emprestados.forEach(e => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${e.matricula}</td><td>${e.titulo}</td><td>${e.dataEmprestimo}</td><td>${e.dataDevolucao}</td>`;
+      tbody.appendChild(tr);
+    });
+  </script>
+</body>
+</html>
+
