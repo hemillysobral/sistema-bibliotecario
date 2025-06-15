@@ -11,10 +11,10 @@ COPY . .
 RUN ls -l /app
 
 # Compila o arquivo Servidor.java
-RUN javac Servidor.java
+RUN javac servidor.java
 
 # Expõe a porta 8080 para acesso externo
 EXPOSE 8080
 
 # Comando para rodar o servidor Java
-CMD ["java", "Servidor"]
+CMD ["java", "servidor"]
